@@ -20,5 +20,6 @@ from django.urls import path
 from vitamin_software_task import views
 
 urlpatterns = [
-    path("stockprices/", views.StockPriceDefault.as_view()),
+    path("stockprices/", views.StockPriceDefault.as_view(), name="stock_prices_default"),
+    path("stockprices/<ticker>/", views.StockPriceAverage.as_view(), name="stock_prices_average"),
 ]
